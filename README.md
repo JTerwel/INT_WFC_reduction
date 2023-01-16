@@ -9,6 +9,7 @@ This project is incomplete. At the moment different parts of the reduction proce
 - redwfcflat.cl: IRAF script to reduce flat field images (As received from Ovidiu Vaduvescu)
 - redwfc.cl: IRAF script to reduce science images (As received from Ovidiu Vaduvescu)
 - Extract_photometry_and_retrieve_WCS.ipynb: Notebook containing a showcase of photometry extraction
+- Autophot.ipynb: Notebook to extract photometry from the reduced images automatically
 
 ### Sections of the reduction process & accessory files:
 #### - Image sorting & renaming: sort_observations.ipynb
@@ -82,8 +83,8 @@ The actual image reduction. Some notes:
 - Don’t forget to update the gain & noise, and make sure it is in the correct unit. Values can be found [here](https://www.ing.iac.es/Astronomy/instruments/wfc/ccdnoise.html)
 - Check images after each step (e.g. stars might be showing in sky flats —> Go to dome flats)
 
-#### - Photometry extraction: Extract_photometry_and_retrieve WCS.ipynb
-As stated above, this needs [AutoPHOT](https://github.com/Astro-Sean/autophot) and [Astrometry.net](https://arxiv.org/abs/0910.2233) to be installed. Currently, this notebook is just a showcase of how it should be used, with values being hardcoded in. This also assumes a different directory structure, where all observations of a single object are in a single directory together. Therefore, files need to be moved again at the start of this step (not shown in the notebook). The first time [AutoPHOT](https://github.com/Astro-Sean/autophot) is run, some questions need to be answered regarding the telescope and header information to be used. This information is saved, so these questions will be skipped on subsequent runs. At some point in the future the file that holds this information will be included in this repository to skip these questions from the get-go.
+#### - Photometry extraction: Extract_photometry_and_retrieve_WCS.ipynb, Autophot.ipynb
+As stated above, this needs [AutoPHOT](https://github.com/Astro-Sean/autophot) and [Astrometry.net](https://arxiv.org/abs/0910.2233) to be installed. Currently, this notebook is just a showcase of how it should be used, with values being hardcoded in. This also assumes a different directory structure, where all observations of a single object are in a single directory together. Therefore, files need to be moved again at the start of this step (not shown in the notebook). The first time [AutoPHOT](https://github.com/Astro-Sean/autophot) is run, some questions need to be answered regarding the telescope and header information to be used. This information is saved, so these questions will be skipped on subsequent runs. At some point in the future the file that holds this information will be included in this repository to skip these questions from the get-go. Autophot.ipynb is a first version to automating this part, but is currently untested.
 
 ### TO-DO list
 - [x] Make Skeleton structure
